@@ -1,0 +1,12 @@
+
+
+Fail to probe vfio-pci driver
+0000:db:00.0 'Device 1000' drv=vfio-pci unused=
+
+You can refer to "https://doc.dpdk.org/guides/linux_gsg/linux_drivers.html"
+
+You also need to make sure vt-d is enabled in BIOS.
+
+Also check GRUB settings:
+
+GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet iommu=pt intel_iommu=on isolcpus=2-11 nohz_full=2-11 rcu_nocbs=2-11 numa_balancing=disable nmi_watchdog=1 audit=0 nosoftlockup hpet=disable tsc=reliable selinux=0 processor.max_cstate=0 default_hugepagesz=1G hugepagesz=1G hugepages=20"
